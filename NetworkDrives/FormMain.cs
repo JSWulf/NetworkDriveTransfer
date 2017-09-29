@@ -21,8 +21,9 @@ namespace NetworkDrives
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			//set defaults
-			if (Environment.GetCommandLineArgs().Length > 2)
+            NTuserDat.Unload("OldUser");
+            //set defaults
+            if (Environment.GetCommandLineArgs().Length > 2)
 			{
 				/*string checkme = "";
 				foreach (string arg in Environment.GetCommandLineArgs())
@@ -31,8 +32,8 @@ namespace NetworkDrives
 				}
 				MessageBox.Show(checkme);// */
 
-				Source.Text = Environment.GetCommandLineArgs()[1];
-				destination.Text = Environment.GetCommandLineArgs()[2];
+				Source.Text = @"\\" + Environment.GetCommandLineArgs()[1] + @"\C$\Users\" + Environment.GetCommandLineArgs()[2];
+				destination.Text = @"\\" + Environment.GetCommandLineArgs()[1] + @"\C$\Users\" + Environment.GetCommandLineArgs()[2] + @"\Desktop";
 				checkBox1.Checked = false;
 			}
 			else
@@ -41,8 +42,14 @@ namespace NetworkDrives
 				destination.Text = @"C:\Users\" + Environment.UserName + @"\Desktop";
 				checkBox1.Checked = true;
 			}
-			
-		}
+
+            //if (!NetDrives.CheckCleanup())
+            //{
+            //    //MessageBox.Show("Old data from last transfer is still in registry. Restart program to send another attempt at removal. If still fails restart your computer.");
+            //    Application.Exit();
+            //}
+
+        }
 		private void Form1_unLoad(object sender, EventArgs e)
 		{
 			//NetDrives.cleanup();

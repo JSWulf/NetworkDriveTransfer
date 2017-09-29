@@ -115,8 +115,9 @@ namespace NetworkDrives
 			}
 
 
-
-			return "VBS file generated successfully.";
+            CheckCleanup();
+            return "VBS file generated successfully.";
+            
 		}
 
 		/// <summary>
@@ -209,5 +210,35 @@ namespace NetworkDrives
 			}
 
 		}
+
+        [DllImport("advapi32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern int RegUnLoadKey(uint hKey, string lpSubKey);
+        public const uint HKEY_USERS = 0x80000003;
+
+        public bool CheckCleanup()
+        {
+            GC.Collect();
+            NTuserDat.gotPrivileges = false;
+            if(Registry.Users.OpenSubKey("OldUser") != null)
+            {
+                NTuserDat.Unload("OldUser");
+                if (Registry.Users.OpenSubKey("OldUser") != null)
+                {
+                    RegUnLoadKey(HKEY_USERS, "OldUser");
+                    if (Registry.Users.OpenSubKey("OldUser") == null)
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+
+            return true;
+        }
 	}
 }

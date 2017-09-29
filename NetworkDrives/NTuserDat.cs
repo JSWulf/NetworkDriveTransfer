@@ -54,7 +54,7 @@ namespace NetworkDrives
 		//public const string HIVE_SUBKEY = "Test";
 
 
-		static private Boolean gotPrivileges = false;
+		static public Boolean gotPrivileges = false;
 
 		static private void GetPrivileges()
 		{
