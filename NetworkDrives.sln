@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkDrives", "NetworkDrives\NetworkDrives.csproj", "{BDBECB6F-8C44-4BE7-8FB2-F899753255CD}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{0F83D080-5073-439A-BE99-43FACDBBBDBE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkDrivesTests", "NetworkDrivesTests\NetworkDrivesTests.csproj", "{1C90DD6C-1904-4772-95AC-892921427E1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetMappedDrives", "GetMappedDrives\GetMappedDrives.csproj", "{C88F441B-C91A-4440-8C78-AE6CB14B2935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +31,10 @@ Global
 		{1C90DD6C-1904-4772-95AC-892921427E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C90DD6C-1904-4772-95AC-892921427E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C90DD6C-1904-4772-95AC-892921427E1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88F441B-C91A-4440-8C78-AE6CB14B2935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88F441B-C91A-4440-8C78-AE6CB14B2935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88F441B-C91A-4440-8C78-AE6CB14B2935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88F441B-C91A-4440-8C78-AE6CB14B2935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -36,5 +42,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0F83D080-5073-439A-BE99-43FACDBBBDBE} = {A5CCADFD-444B-470E-BC4F-7B29BFB7D524}
 		{1C90DD6C-1904-4772-95AC-892921427E1B} = {A5CCADFD-444B-470E-BC4F-7B29BFB7D524}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59E500FA-71F1-4CA5-90CB-19D485699AEA}
 	EndGlobalSection
 EndGlobal
